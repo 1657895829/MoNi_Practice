@@ -9,6 +9,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Fragment_LruCache_XRecyclerView_MVP+Rxjava+Retrofit+Fresco" />
+            <option value="$PROJECT_DIR$/MonthMoNi" />
+            <option value="$PROJECT_DIR$/zhoukao4" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

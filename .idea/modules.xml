@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Fragment_LruCache_XRecyclerView_MVP+Rxjava+Retrofit+Fresco/Fragment_LruCache_XRecyclerView_MVP+Rxjava+Retrofit+Fresco.iml" filepath="$PROJECT_DIR$/Fragment_LruCache_XRecyclerView_MVP+Rxjava+Retrofit+Fresco/Fragment_LruCache_XRecyclerView_MVP+Rxjava+Retrofit+Fresco.iml" />
       <module fileurl="file://$PROJECT_DIR$/MoNi_Practice.iml" filepath="$PROJECT_DIR$/MoNi_Practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MonthMoNi/MonthMoNi.iml" filepath="$PROJECT_DIR$/MonthMoNi/MonthMoNi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhoukao4/zhoukao4.iml" filepath="$PROJECT_DIR$/zhoukao4/zhoukao4.iml" />
     </modules>
   </component>
 </project>
