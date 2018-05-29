@@ -16,8 +16,8 @@ public class MyPresenter extends BasePresenter<MyView> {
     }
 
     //请求数据的方法
-    public void get(){
-        myModel.getData(new MyView() {
+    public void get(String num){
+        myModel.getData(num,new MyView() {
             @Override
             public void onSuccess(NewsBean newsBean) {
                 if (view != null){

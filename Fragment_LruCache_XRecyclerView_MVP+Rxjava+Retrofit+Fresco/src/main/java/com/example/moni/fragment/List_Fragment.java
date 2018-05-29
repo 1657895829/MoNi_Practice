@@ -33,6 +33,7 @@ public class List_Fragment extends BaseMvpFragment<MyView,MyPresenter> implement
     private Unbinder unbinder;
     private MyListAdapter adapter;
     private Handler handler = new Handler();
+    int num = 10;               //页数
 
     @Override
     public MyPresenter initPresenter() {
@@ -53,7 +54,7 @@ public class List_Fragment extends BaseMvpFragment<MyView,MyPresenter> implement
         super.onActivityCreated(savedInstanceState);
 
         //请求数据
-        p.get();
+        p.get(Integer.toString(num));
 
         //设置布局管理器以及数据适配器,分割线
         LinearLayoutManager manager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
@@ -74,7 +75,7 @@ public class List_Fragment extends BaseMvpFragment<MyView,MyPresenter> implement
                          * 在子线程内完成上拉刷新数据
                          * 对于本接口来说，只要你把p层请求数据的方法再写一遍重新请求数据，数据就会刷新，即使你不传递页数参数
                          */
-                        p.get();
+                        p.get(Integer.toString(num));
                         adapter.notifyDataSetChanged();
                         xRecyclerView.refreshComplete();
                     }
@@ -87,10 +88,10 @@ public class List_Fragment extends BaseMvpFragment<MyView,MyPresenter> implement
                     @Override
                     public void run() {
                         /**
-                         *    在子线程内完成下拉加载数据
+                         *    在子线程内完成下拉加载更多数据
                          *    对于本接口来说，只要你把p层请求数据的方法再写一遍重新请求数据，数据就会加载，即使你不传递页数参数
                          */
-                        p.get();
+                        p.get(Integer.toString(num++));
                         adapter.notifyDataSetChanged();
                         xRecyclerView.loadMoreComplete();
                     }
