@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical" >
+
+    <!--自定义流式布局显示搜索框-->
+    <com.nex3z.flowlayout.FlowLayout
+        android:id="@+id/flow1"
+        app:flRowSpacing="8dp"
+        app:flChildSpacing="auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="#eee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:background="#f9f9f9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edit_input"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="10dp"
+                        android:drawableLeft="@drawable/search_icon"
+                        android:drawablePadding="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/search_edittext_shape"
+                        android:textSize="16sp"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:hint="请输入关键字"/>
+
+                </FrameLayout>
+
+                <Button
+                    android:id="@+id/search_btn"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/btn_search_bg"
+                    android:layout_width="@dimen/btn_width"
+                    android:layout_height="@dimen/btn_height"
+                    android:text="搜索"
+                    android:textColor="#ffffff"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.nex3z.flowlayout.FlowLayout>
+
+    <TextView
+        android:text="搜索发现"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <!--自定义流式布局显示搜索历史记录-->
+    <com.nex3z.flowlayout.FlowLayout
+        android:id="@+id/flow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:flChildSpacing="auto"
+        android:layout_margin="10dp"
+        app:flChildSpacingForLastRow="align"
+        app:flRowSpacing="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="@drawable/label_bg"
+            android:text="iphone10手机"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="@drawable/label_bg"
+            android:text="门后衣挂"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="@drawable/label_bg"
+            android:text="浴室收纳架"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="@drawable/label_bg"
+            android:text="调味料收纳盒"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="@drawable/label_bg"
+            android:text="化妆品收纳盒"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="@drawable/label_bg"
+            android:text="玻尿酸热卖"/>
+    </com.nex3z.flowlayout.FlowLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/sousuo_recyview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"/>
+</LinearLayout>
