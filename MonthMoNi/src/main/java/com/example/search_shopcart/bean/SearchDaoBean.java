@@ -6,6 +6,7 @@ import org.greenrobot.greendao.annotation.Generated;
 
 /**
  * Created   by   Dewey .
+ * 搜索框输入数据封装为 DreenDao bean 类
  */
 @Entity
 public class SearchDaoBean {
@@ -47,5 +48,15 @@ public class SearchDaoBean {
     }
     public void setSelectGoods(String selectGoods) {
         this.selectGoods = selectGoods;
+    }
+
+    @Override
+    public String toString() {
+        return "SearchDaoBean{" +
+                "id=" + id +
+                ", uid='" + uid + '\'' +
+                ", uname='" + uname + '\'' +
+                ", selectGoods='" + selectGoods + '\'' +
+                '}';
     }
 }

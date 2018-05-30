@@ -36,7 +36,8 @@ public class SearchActivityAdapter extends RecyclerView.Adapter<SearchActivityAd
         if (this.list == null) {
             this.list = new ArrayList<>();
         }
-        this.list.addAll(data);
+        list.clear();
+        list.addAll(data);
         notifyDataSetChanged();
     }
 
