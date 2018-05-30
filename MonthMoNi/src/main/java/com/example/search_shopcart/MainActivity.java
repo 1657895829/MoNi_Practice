@@ -1,5 +1,6 @@
 package com.example.search_shopcart;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,7 @@ import com.example.search_shopcart.base.BaseMvpActivity;
 import com.example.search_shopcart.bean.SearchBean;
 import com.example.search_shopcart.presenter.SearchPresenter;
 import com.example.search_shopcart.view.SearchViewListener;
+import com.nex3z.flowlayout.FlowLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -24,6 +26,8 @@ public class MainActivity extends BaseMvpActivity<SearchViewListener, SearchPres
     EditText editInput;
     @BindView(R.id.search_btn)
     Button searchBtn;
+    @BindView(R.id.flow2)
+    FlowLayout flow2;
     private SearchActivityAdapter adapter;
 
     @Override
@@ -41,17 +45,22 @@ public class MainActivity extends BaseMvpActivity<SearchViewListener, SearchPres
         LinearLayoutManager manager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         sousuoRecyview.setLayoutManager(manager);
         adapter = new SearchActivityAdapter(MainActivity.this);
+        sousuoRecyview.setAdapter(adapter);
     }
 
-    @OnClick({  R.id.search_btn})
+    @OnClick({R.id.search_btn,R.id.flow2})
     public void onViewClicked(View view) {
         switch (view.getId()) {
 
             //点击搜索按钮
             case R.id.search_btn:
-                Toast.makeText(this, "按钮搜索", Toast.LENGTH_SHORT).show();
                 p.getData(editInput.getText().toString());
                 break;
+
+            //点击任意一条搜索记录，跳转到购物车界面
+            case R.id.flow2:
+                Toast.makeText(this, "跳转购物车", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this,ShopActivity.class));
 
             default:
                 break;
@@ -61,9 +70,8 @@ public class MainActivity extends BaseMvpActivity<SearchViewListener, SearchPres
     @Override
     public void success(SearchBean searchBean) {
         //添加数据
-        if (searchBean != null) {
+        if (adapter != null) {
             adapter.addData(searchBean.getData());
-            sousuoRecyview.setAdapter(adapter);
         }
     }
 
@@ -81,5 +89,6 @@ public class MainActivity extends BaseMvpActivity<SearchViewListener, SearchPres
     public void falseEdit() {
         Toast.makeText(this, "请输入手机或笔记本", Toast.LENGTH_SHORT).show();
     }
+
 }
 
